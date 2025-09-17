@@ -5,14 +5,14 @@ WORKDIR /app
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies (including dev dependencies)
+RUN npm ci
 
 # Copy source and config files
 COPY . .
 
-# Install dev dependencies and build
-RUN npm install && npm run build && npm run prisma:generate
+# Build the application and generate Prisma client
+RUN npm run build && npm run prisma:generate
 
 # Remove dev dependencies
 RUN npm prune --production
