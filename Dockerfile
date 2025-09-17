@@ -11,14 +11,11 @@ RUN npm ci
 # Copy source and config files
 COPY . .
 
-# Build the application and generate Prisma client
-RUN npx tsc -p tsconfig.json && npx prisma generate
-
-# Remove dev dependencies
-RUN npm prune --production
+# Generate Prisma client
+RUN npx prisma generate
 
 # Expose port
 EXPOSE 3001
 
-# Start the application
-CMD ["node", "dist/index.js"]
+# Start the application using tsx to run TypeScript directly
+CMD ["npx", "tsx", "src/index.ts"]

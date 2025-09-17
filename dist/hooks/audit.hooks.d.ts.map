@@ -1,0 +1,1 @@
+{"version":3,"file":"audit.hooks.d.ts","sourceRoot":"","sources":["../../src/hooks/audit.hooks.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,eAAe,EAAgC,qBAAqB,EAAE,iBAAiB,EAAE,MAAM,SAAS,CAAC;AAGvH,wBAAgB,kBAAkB,CAAC,GAAG,EAAE,eAAe,QAGtD;AAED,eAAO,MAAM,eAAe,EAAE,qBAO7B,CAAC;AAEF,eAAO,MAAM,WAAW,EAAE,iBA8DzB,CAAC"}
