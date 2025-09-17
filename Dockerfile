@@ -12,7 +12,7 @@ RUN npm ci
 COPY . .
 
 # Build the application and generate Prisma client
-RUN npm run build && npm run prisma:generate
+RUN npx tsc -p tsconfig.json && npx prisma generate
 
 # Remove dev dependencies
 RUN npm prune --production
