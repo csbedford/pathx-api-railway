@@ -17,5 +17,5 @@ RUN npx prisma generate
 # Expose port
 EXPOSE 3001
 
-# Start the application using tsx to run TypeScript directly
+# Start the application using tsx to run TypeScript directly with ESM support
 CMD ["npx", "tsx", "src/index.ts"]
