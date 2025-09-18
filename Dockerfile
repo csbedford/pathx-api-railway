@@ -21,8 +21,8 @@ RUN npx prisma generate
 EXPOSE 3001
 
 # Create startup script that runs migrations and then starts the app
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
+COPY docker-entrypoint.sh ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh
 
 # Start the application using the entrypoint script
-CMD ["/docker-entrypoint.sh"]
+CMD ["./docker-entrypoint.sh"]
