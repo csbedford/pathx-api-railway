@@ -20,5 +20,9 @@ RUN npx prisma generate
 # Expose port
 EXPOSE 3001
 
-# Start the application using tsx to run TypeScript directly with ESM support
-CMD ["npx", "tsx", "src/index.ts"]
+# Create startup script that runs migrations and then starts the app
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+# Start the application using the entrypoint script
+CMD ["/docker-entrypoint.sh"]
