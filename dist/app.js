@@ -40,7 +40,14 @@ async function createApp() {
         });
     });
     // Security and CORS
-    await app.register(cors_1.default, { origin: true });
+    await app.register(cors_1.default, {
+        origin: [
+            'https://pathx-v2-web.vercel.app',
+            'http://localhost:3000',
+            'http://localhost:3002'
+        ],
+        credentials: true
+    });
     await app.register(helmet_1.default);
     // Audit hooks
     (0, audit_hooks_1.registerAuditHooks)(app);
