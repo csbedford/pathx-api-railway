@@ -39,7 +39,14 @@ export async function createApp() {
   });
 
   // Security and CORS
-  await app.register(cors, { origin: true });
+  await app.register(cors, {
+    origin: [
+      'https://pathx-v2-web.vercel.app',
+      'http://localhost:3000',
+      'http://localhost:3002'
+    ],
+    credentials: true
+  });
   await app.register(helmet);
 
   // Audit hooks
