@@ -21,4 +21,4 @@ RUN npx prisma generate
 EXPOSE 3001
 
 # Start the application using tsx to run TypeScript directly with ESM support
-CMD ["sh", "-c", "npx prisma migrate deploy && npx tsx src/index.ts"]
+CMD ["sh", "-c", "npx prisma db push && npx tsx src/index.ts"]
