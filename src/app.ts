@@ -75,7 +75,8 @@ export async function createApp() {
   await registerCopilotRoutes(app as any);
   await app.register(registerCampaignRoutes as any, { prefix: appConfig.API_PREFIX });
   await app.register(registerRfpRoutes as any, { prefix: appConfig.API_PREFIX });
-  await app.register(registerBriefRoutes as any, { prefix: appConfig.API_PREFIX });
+  // Temporarily disable briefs routes - model doesn't exist in schema
+  // await app.register(registerBriefRoutes as any, { prefix: appConfig.API_PREFIX });
   await app.register(registerPartnerRoutes as any, { prefix: appConfig.API_PREFIX });
   await app.register(distributionRoutes as any, { prefix: appConfig.API_PREFIX });
 
